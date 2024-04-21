@@ -6,7 +6,20 @@ import java.util.LinkedList;
 import java.util.List;
 
 public class Employee {
+	private Gender gender; 
+	private Grade grade;
 
+	public enum Gender {
+		MALE,
+		FEMALE
+	}
+
+	public enum Grade {
+		GRADE_1,
+		GRADE_2,
+		GRADE_3
+	}
+	
 	private String employeeId;
 	private String firstName;
 	private String lastName;
@@ -19,7 +32,6 @@ public class Employee {
 	private int monthWorkingInYear;
 	
 	private boolean isForeigner;
-	private boolean gender; //true = Laki-laki, false = Perempuan
 	
 	private int monthlySalary;
 	private int otherMonthlyIncome;
@@ -52,15 +64,15 @@ public class Employee {
 	 * Jika pegawai adalah warga negara asing gaji bulanan diperbesar sebanyak 50%
 	 */
 	
-	public void setMonthlySalary(int grade) {	
+	public void setMonthlySalary(Grade grade) {	
 		switch (grade) {
-			case 1:
+			case GRADE_1:
 				monthlySalary = 3000000;
 				break;
-			case 2:
+			case GRADE_2:
 				monthlySalary = 5000000;
 				break;
-			case 3:
+			case GRADE_3:
 				monthlySalary = 7000000;
 				break;
 			default:
